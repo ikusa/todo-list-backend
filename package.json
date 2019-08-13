@@ -11,23 +11,29 @@
   "author": "Joshua <joshuasetiawan04@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^3.0.6",
+    "dotenv": "^8.0.0",
     "graphql": "^14.4.2",
     "graphql-yoga": "^1.18.1",
+    "jsonwebtoken": "^8.5.1",
     "nexus": "^0.12.0-beta.6",
     "nexus-prisma": "^0.3.7",
     "prisma-client-lib": "^1.34.5"
   },
   "devDependencies": {
-    "ts-node": "^8.3.0",
-    "ts-node-dev": "^1.0.0-pre.40",
-    "typescript": "3.4.5",
+    "@types/bcrypt": "^3.0.0",
+    "@types/dotenv": "^6.1.1",
+    "@types/jsonwebtoken": "^8.3.3",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
+    "pre-push": "^0.1.1",
     "prettier": "^1.18.2",
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
-    "pre-push": "^0.1.1"
+    "ts-node": "^8.3.0",
+    "ts-node-dev": "^1.0.0-pre.40",
+    "typescript": "3.4.5"
   },
   "pre-push": [
     "test"
