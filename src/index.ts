@@ -1,10 +1,28 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import { prisma } from '../generated/prisma-client';
 import { GraphQLServer } from 'graphql-yoga';
 import { schema } from './schema';
+import { ContextParameters } from 'graphql-yoga/dist/types';
+import { decodeJWT } from './helpers/jwt';
+import { permissions } from './middlewares/permissions';
+
+export type Context = {
+  prisma: typeof prisma;
+};
 
 const server = new GraphQLServer({
   schema,
-  context: { prisma },
+  context: ({ request }: ContextParameters) => {
+    let token = request.get('token');
+    let userId = decodeJWT(token);
+    return {
+      prisma,
+      userId,
+    };
+  },
+  middlewares: [permissions],
 });
 
 async function main(): Promise<void> {
