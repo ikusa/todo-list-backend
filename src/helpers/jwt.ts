@@ -4,10 +4,14 @@ let SECRET = process.env.SECRET;
 
 let generateJWT = (id: string): string => sign(id, SECRET);
 let decodeJWT = (token: string): string => {
-  let result = verify(token, SECRET);
-  if (typeof result === 'string') {
-    return result;
+  try {
+    let result = verify(token, SECRET);
+    if (typeof result === 'string') {
+      return result;
+    }
+    return '';
+  } catch (e) {
+    return '';
   }
-  return '';
 };
 export { generateJWT, decodeJWT };
