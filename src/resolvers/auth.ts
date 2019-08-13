@@ -1,9 +1,9 @@
 import { extendType } from 'nexus';
-import { stringArg } from 'nexus/dist';
+import { stringArg } from 'nexus';
 import { hash, compare } from 'bcrypt';
 
-import { Context } from '../../index';
-import { generateJWT } from '../../helpers/jwt';
+import { Context } from '../index';
+import { generateJWT } from '../helpers/jwt';
 
 export let Register = extendType({
   type: 'Mutation',

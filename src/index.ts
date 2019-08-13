@@ -10,6 +10,7 @@ import { permissions } from './middlewares/permissions';
 
 export type Context = {
   prisma: typeof prisma;
+  userId: string;
 };
 
 const server = new GraphQLServer({
