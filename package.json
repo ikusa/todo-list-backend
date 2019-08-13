@@ -5,6 +5,7 @@
   "scripts": {
     "start": "ts-node ./src/index.ts",
     "dev": "ts-node-dev --no-notify --respawn --transpileOnly ./src",
+    "test": "yarn lint",
     "lint": "eslint \"./src/*.ts\" --max-warnings 0"
   },
   "author": "Joshua <joshuasetiawan04@gmail.com>",
@@ -25,6 +26,10 @@
     "eslint-plugin-prettier": "^3.1.0",
     "prettier": "^1.18.2",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0"
-  }
+    "@typescript-eslint/parser": "^1.13.0",
+    "pre-push": "^0.1.1"
+  },
+  "pre-push": [
+    "test"
+  ]
 }
