@@ -12,7 +12,7 @@ type Todo {
   id: ID! @id
   task: String!
   dueDate : DateTime!
-  done: Boolean!
+  done: Boolean! @default(value: false)
   user: User!
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
