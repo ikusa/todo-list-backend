@@ -4,7 +4,7 @@ import * as path from 'path';
 import { prismaObjectType, makePrismaSchema } from 'nexus-prisma';
 
 import { Todo, Auth } from './typeSchemas';
-import { Register } from './resolvers/mutation/register';
+import { Register, Login } from './resolvers/mutation/auth';
 
 let Query = prismaObjectType({
   name: 'Query',
@@ -21,7 +21,7 @@ let Mutation = prismaObjectType({
 });
 
 export let schema = makePrismaSchema({
-  types: [Query, Mutation, Todo, Auth, Register],
+  types: [Query, Mutation, Todo, Auth, Register, Login],
 
   prisma: {
     datamodelInfo,
