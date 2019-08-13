@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
     "outDir": "./lib",
-    "rootDir": "./src",
+    "rootDir": "./",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["es2016", "esnext.asynciterable"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "generated"],
   "exclude": ["node_modules/"]
 }
