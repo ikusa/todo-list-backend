@@ -1,4 +1,19 @@
 type User {
   id: ID! @id
+  email: String!
+  password: String!
   name: String!
+  todos : [Todo!]!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Todo {
+  id: ID! @id
+  task: String!
+  dueDate : DateTime!
+  done: Boolean!
+  user: User!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
 }
